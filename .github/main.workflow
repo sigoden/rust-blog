@@ -8,4 +8,5 @@ action "Deply to github pages" {
   env = {
     RENDER_BRANCH = "render"
   }
+  secrets = ["GITHUB_TOKEN"]
 }
