@@ -20,6 +20,7 @@ git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 git submodule init
 git submodule update --remote --recursive
 
+npm install
 gatsby build
 
 mv public /tmp
