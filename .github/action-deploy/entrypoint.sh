@@ -21,7 +21,7 @@ cd $STAGE_DIR
 
 gatsby build
 
-mv public $GITHUB_WORKSPACE
+mv public /tmp
 
 cd /tmp/public
 
