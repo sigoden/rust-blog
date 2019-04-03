@@ -18,7 +18,6 @@ git submodule init
 git submodule update --remote --recursive
 
 cd $STAGE_DIR
-
 gatsby build
 
 mv public /tmp
