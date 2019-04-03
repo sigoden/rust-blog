@@ -2,7 +2,7 @@
 
 STAGE_DIR=${GITHUB_WORKSPACE}/stage
 GHPAGES_BRANCH=gh-pages
-TARGET_REPO_URL="https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+TARGET_REPO_URL="git@github.com/${GITHUB_REPOSITORY}.git"
 
 if [ -z "$RENDER_BRANCH" ]; then
     echo "Set the RENDER_BRANCH env variable."
