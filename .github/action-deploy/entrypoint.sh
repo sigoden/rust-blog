@@ -9,7 +9,7 @@ if [ -z "$RENDER_BRANCH" ]; then
     exit 1
 fi
 
-git config user.name "${GITHUB_ACTOR}"
+git config --global user.name "${GITHUB_ACTOR}"
 git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
 git clone -b $RENDER_BRANCH $TARGET_REPO_URL $STAGE_DIR
