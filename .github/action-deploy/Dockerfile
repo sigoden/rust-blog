@@ -1,6 +1,6 @@
 FROM node:10-alpine
 
-LABEL "com.github.actions.name"="gatsby-deploy-to-github-pages"
+LABEL "com.github.actions.name"="deploy-gatsby-to-github-pages"
 LABEL "com.github.actions.description"="Use gatsby js to build sites and deploy it to github pages"
 LABEL "com.github.actions.icon"="mic"
 LABEL "com.github.actions.color"="purple"
