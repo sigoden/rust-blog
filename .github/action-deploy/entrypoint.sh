@@ -17,9 +17,11 @@ fi
 
 git submodule init
 git submodule update --remote --recursive
+echo "cloned the repo"
 
 npm install
 npx gatsby build
+echo "built with gatsby"
 
 mv public /tmp
 
@@ -33,5 +35,4 @@ git config user.name "${GITHUB_ACTOR}"
 git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 git commit -m "Automated deployment to GitHub Pages"
 git push deploy $GHPAGES_BRANCH --force
-
-echo 'Complete'
+echo "deployed to gh pages"
