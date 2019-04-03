@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/bash -e
 
 STAGE_DIR=${GITHUB_WORKSPACE}/stage
 GHPAGES_BRANCH=gh-pages
