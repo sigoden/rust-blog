@@ -1,6 +1,12 @@
-workflow "Build & Deploy" {
+workflow "Build & Deploy: masater" {
   resolves = [
-    "Deply: push master",
+    "Deply: push master"
+  ]
+  on = "push"
+}
+
+workflow "Build & Deploy: render" {
+  resolves = [
     "Deply: push render"
   ]
   on = "push"
