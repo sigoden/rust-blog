@@ -1,18 +1,18 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Why Rust Has`,
+    author: `sigoden huang`,
+    description: `Rust 系列博客文章: 为什么 Rust 要有某某特性和库`,
+    siteUrl: `https://sigode.github.io/why-rust-has`,
     social: {
-      twitter: `kylemathews`,
+      github: `sigoden`,
     },
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
+        path: `${__dirname}/content/writings/blog`,
         name: `blog`,
       },
     },

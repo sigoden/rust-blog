@@ -1,0 +1,4 @@
+[submodule "content/writings"]
+	path = content/writings
+	url = git@github.com:sigoden/why-rust-has.git
+	branch = master

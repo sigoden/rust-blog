@@ -38,12 +38,14 @@ function Bio() {
               }}
             />
             <p>
-              Written by <strong>{author}</strong> who lives and works in San
-              Francisco building useful things.
+              作者: {author}
+              <br></br>
               {` `}
-              <a href={`https://twitter.com/${social.twitter}`}>
-                You should follow him on Twitter
+              欢迎进入
+              <a href={`https://github.com/${social.github}/why-rust-has`}>
+                Github
               </a>
+              参与讨论和评论
             </p>
           </div>
         )
@@ -65,7 +67,7 @@ const bioQuery = graphql`
       siteMetadata {
         author
         social {
-          twitter
+          github
         }
       }
     }
