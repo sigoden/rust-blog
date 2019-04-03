@@ -10,8 +10,7 @@ LABEL "homepage"="https://github.com/sigoden/why-rust-has/tree/deploy-action"
 LABEL "maintainer"="sigoden <sigoden@github.com>"
 
 RUN	apk add --no-cache \
-    ca-certificates \
-    curl \
+    openssh-client \
     git && \
     npm install -g gatsby-cli
 
