@@ -3,13 +3,8 @@ workflow "Build & Deploy" {
   on = "push"
 }
 
-workflow "Build & Deploy(Test)" {
-  resolves = ["Deply to github pages"]
-    on = "check_run"
-}
-
 action "Deply to github pages" {
-  uses = "./action-deploy"
+  uses = "./.github/action-deploy"
   env = {
     RENDER_BRANCH = "render"
   }
