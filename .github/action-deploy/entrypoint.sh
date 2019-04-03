@@ -14,14 +14,12 @@ if [ -n "${GIT_DEPLOY_KEY}" ]; then
     echo "${GIT_DEPLOY_KEY}" > /root/.ssh/id_rsa && \
     chmod 400 /root/.ssh/id_rsa
 fi
-git config --global user.name "${GITHUB_ACTOR}"
-git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
 git submodule init
 git submodule update --remote --recursive
 
 npm install
-gatsby build
+npx gatsby build
 
 mv public /tmp
 
@@ -31,6 +29,8 @@ git init
 git remote add deploy $TARGET_REPO_URL
 git checkout --orphan $GHPAGES_BRANCH 
 git add .
+git config user.name "${GITHUB_ACTOR}"
+git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 git commit -m "Automated deployment to GitHub Pages"
 git push deploy $GHPAGES_BRANCH --force
 
