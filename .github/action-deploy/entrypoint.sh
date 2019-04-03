@@ -10,7 +10,7 @@ if [ -z "$RENDER_BRANCH" ]; then
 fi
 
 git config user.name "${GITHUB_ACTOR}"
-git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
 git clone -b $RENDER_BRANCH $TARGET_REPO_URL $STAGE_DIR
 git remote set-url origin $TARGET_REPO_URL
