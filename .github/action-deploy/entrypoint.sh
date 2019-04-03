@@ -23,7 +23,7 @@ gatsby build
 
 mv public $GITHUB_WORKSPACE
 
-cd $GITHUB_WORKSPACE/public
+cd /tmp/public
 
 git init
 git remote add deploy $TARGET_REPO_URL
