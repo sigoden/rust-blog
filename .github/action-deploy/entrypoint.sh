@@ -12,7 +12,10 @@ fi
 git config user.name "${GITHUB_ACTOR}"
 git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
-git clone --recurse-submodules -b $RENDER_BRANCH $TARGET_REPO_URL $STAGE_DIR
+git clone -b $RENDER_BRANCH $TARGET_REPO_URL $STAGE_DIR
+git remote set-url origin $TARGET_REPO_URL
+git submodule init
+git submodule update --remote --recursive
 
 cd $STAGE_DIR
 
