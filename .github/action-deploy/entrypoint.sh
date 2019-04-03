@@ -17,7 +17,6 @@ fi
 git config --global user.name "${GITHUB_ACTOR}"
 git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
-git clone -b $RENDER_BRANCH $TARGET_REPO_URL $STAGE_DIR
 git submodule init
 git submodule update --remote --recursive
 
