@@ -20,7 +20,7 @@ git submodule update --remote --recursive
 echo "cloned the repo"
 
 npm install --silent
-npx gatsby build
+npx gatsby build --prefix-paths
 echo "built with gatsby"
 
 mv public /tmp

@@ -1,9 +1,10 @@
 module.exports = {
+  pathPrefix: `/why-rust-has`,
   siteMetadata: {
     title: `Why Rust Has`,
     author: `sigoden huang`,
     description: `Rust 系列博客文章: 为什么 Rust 要有???`,
-    siteUrl: `https://sigode.github.io/why-rust-has`,
+    siteUrl: `https://sigoden.github.io/why-rust-has/`,
     social: {
       github: `sigoden`,
     },
