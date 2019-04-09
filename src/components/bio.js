@@ -42,7 +42,7 @@ function Bio() {
               <br></br>
               {` `}
               欢迎进入
-              <a href={`https://github.com/${social.github}/why-rust-has`}>
+              <a href={`https://github.com/${social.github}/rust-blog`}>
                 Github
               </a>
               参与讨论和评论
