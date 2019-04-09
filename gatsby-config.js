@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: `/rust-blog`,
   siteMetadata: {
-    title: `Rust 系列`,
+    title: `Rust 博客`,
     author: `sigoden huang`,
     description: `Rust 系列博客文章`,
     siteUrl: `https://sigoden.github.io/rust-blog/`,
