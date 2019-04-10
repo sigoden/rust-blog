@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Rust 博客]]></title><description><![CDATA[Rust 系列博客文章]]></description><link>https://sigoden.github.io/rust-blog/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 10 Apr 2019 10:55:30 GMT</lastBuildDate><item><title><![CDATA[初学者 FAQ？]]></title><description><![CDATA[Rust 初学者常会碰到的一些问题的归纳和解答。 注意: 此文会不定期更新。  更新 rustup 工具自身 toolchain: Rust 发布频道，如  ， ,   。 target: Rust 支持的平台，如   和  ,点击 platform-support…]]></description><link>https://sigoden.github.io/rust-blog//novice-faq/</link><guid isPermaLink="false">https://sigoden.github.io/rust-blog//novice-faq/</guid><pubDate>Wed, 10 Apr 2019 03:43:49 GMT</pubDate><content:encoded>&lt;p&gt;Rust 初学者常会碰到的一些问题的归纳和解答。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意: 此文会不定期更新。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;details&gt;
+&lt;summary&gt;
+如何安装 Rust ?
+&lt;/summary&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;curl https://sh.rustup.rs -sSf | sh &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;
+如何更新 Rust ?
+&lt;/summary&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;rustup update # 更新&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;rustup self update&lt;/code&gt; 更新 rustup 工具自身&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;
+什么是 toolchain, target, component？
+&lt;/summary&gt;
+&lt;ul&gt;
+&lt;li&gt;toolchain: Rust 发布频道，如 &lt;code class=&quot;language-text&quot;&gt;stable&lt;/code&gt;，&lt;code class=&quot;language-text&quot;&gt;beta&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;nightly&lt;/code&gt; 。&lt;/li&gt;
+&lt;li&gt;target: Rust 支持的平台，如 &lt;code class=&quot;language-text&quot;&gt;x86_64-unknown-linux-gnu&lt;/code&gt; 和 &lt;code class=&quot;language-text&quot;&gt;wasm32-unknown-unknown&lt;/code&gt;,点击&lt;a href=&quot;https://forge.rust-lang.org/platform-support.html&quot;&gt;platform-support&lt;/a&gt;获取查看所有支持的平台&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;component: Rust 工具箱组件，常见有 &lt;code class=&quot;language-text&quot;&gt;cargo&lt;/code&gt;(包管理), &lt;code class=&quot;language-text&quot;&gt;rustc&lt;/code&gt;(编译器) &lt;code class=&quot;language-text&quot;&gt;rust-src&lt;/code&gt;(rust源码)，&lt;code class=&quot;language-text&quot;&gt;rust-std&lt;/code&gt;(std库)，&lt;code class=&quot;language-text&quot;&gt;clippy&lt;/code&gt;(lint),&lt;code class=&quot;language-text&quot;&gt;rustfmt&lt;/code&gt;(格式工具)。&lt;/p&gt;
+&lt;/details&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;details&gt;
+&lt;summary&gt;
+如何安装并使用 nightly ?
+&lt;/summary&gt;
+&lt;p&gt;安装&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;rustup install nightly
+rustup component add --toolchain nightly clippy rust-src rustfmt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;配置项目使用 nightly&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;rustup override set nightly&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;使用 nightly 版本的命令&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;cargo +nightly build&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;
+Cargo下载太慢，如何加速?
+&lt;/summary&gt;
+&lt;ul&gt;
+&lt;li&gt;Cargo 换源&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;修改 &lt;code class=&quot;language-text&quot;&gt;$HOME/.cargo/config&lt;/code&gt; 文件&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;[source.crates-io]
+replace-with = &amp;#39;ustc&amp;#39;
+
+[source.ustc]
+registry = &amp;quot;git://mirrors.ustc.edu.cn/crates.io-index&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Cargo 代理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;修改 &lt;code class=&quot;language-text&quot;&gt;$HOME/.cargo/config&lt;/code&gt; 文件&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;[http]
+proxy = &amp;quot;127.0.0.1:8080&amp;quot;
+
+[https]
+proxy = &amp;quot;127.0.0.1:8080&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;将替换 &lt;code class=&quot;language-text&quot;&gt;127.0.0.1:8080&lt;/code&gt; 成你的代理服务器地址&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;
+rust开发使用什么 IDE？
+&lt;/summary&gt;
+&lt;ul&gt;
+&lt;li&gt;clion + &lt;a href=&quot;https://plugins.jetbrains.com/plugin/8182-rust/&quot;&gt;IntelliJ Rust plugin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;vscode + &lt;a href=&quot;https://github.com/rust-analyzer/rust-analyzer&quot;&gt;ra-lsp&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;安装 &lt;code class=&quot;language-text&quot;&gt;ra-lsp&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;git clone https://github.com/rust-analyzer/rust-analyzer
+cd rust-analyzer
+cargo install-code&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;
+为什么学习 Rust 要先从书籍而不是代码开始？
+&lt;/summary&gt;
+&lt;p&gt;Rust 引入了很多独特的概念（Trait, 所有权与借用，生命周期)，加上编译器十分严格，所以建议从阅读书籍理解基础概念入手。&lt;/p&gt;
+&lt;p&gt;如果不理解这些直接写代码，就是和编译器战斗了，学习效率及其低下且痛苦。&lt;/p&gt;
+&lt;p&gt;下面列出了一些重要的书籍。&lt;/p&gt;
+&lt;h4&gt;必读&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://doc.rust-lang.org/book/&quot;&gt;The Rust Programing Language&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://doc.rust-lang.org/edition-guide/rust-2018/index.html&quot;&gt;The Edition Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;强烈推荐&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://doc.rust-lang.org/stable/rust-by-example/&quot;&gt;Rust by Example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://doc.rust-lang.org/stable/nomicon/README.html&quot;&gt;The Rustonomicon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://doc.rust-lang.org/cargo/guide/&quot;&gt;The Cargo Book&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;
+如何查询 Rust 语法规范？
+&lt;/summary&gt;
+&lt;p&gt;&lt;a href=&quot;https://doc.rust-lang.org/reference/introduction.html&quot;&gt;The Rust Reference&lt;/a&gt;&lt;/p&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;
+Rust 的 Features 清单?
+&lt;/summary&gt;
+&lt;p&gt;&lt;a href=&quot;https://doc.rust-lang.org/unstable-book/index.html&quot;&gt;The Unstable Book&lt;/a&gt;&lt;/p&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;
+Rust 程序员自称？
+&lt;/summary&gt;
+&lt;p&gt;rustacean&lt;/p&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;
+Rust 术语中英文对照词典？
+&lt;/summary&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rust-lang-cn/english-chinese-glossary-of-rust/blob/master/rust-glossary.md&quot;&gt;Rust Glossary&lt;/a&gt;&lt;/p&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;
+为什么要多使用 `cargo check` 少使用 `cargo build`?
+&lt;/summary&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;cargo check&lt;/code&gt; 专为加速工作流而开发的命令，它不产生二进制，只确保代码能够编译通过，&lt;strong&gt;更快&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;推荐开发流程：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;编写代码&lt;/li&gt;
+&lt;li&gt;运行 &lt;code class=&quot;language-text&quot;&gt;cargo check&lt;/code&gt; 判断是否编译通过&lt;/li&gt;
+&lt;li&gt;重复步骤 1-2&lt;/li&gt;
+&lt;li&gt;运行 &lt;code class=&quot;language-text&quot;&gt;cargo test&lt;/code&gt;，确保通过所有测试&lt;/li&gt;
+&lt;li&gt;运行 &lt;code class=&quot;language-text&quot;&gt;cargo build&lt;/code&gt; 生成可执行文件&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;执行步骤 1&lt;/p&gt;
+&lt;/details&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;details&gt;
+&lt;summary&gt;
+`#![..]` vs `#[..]` ?
+&lt;/summary&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;#[..]&lt;/code&gt; 仅作用于它后面的代码。&lt;code class=&quot;language-text&quot;&gt;#![..]&lt;/code&gt; 作用于整个文件。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token attribute attr-name&quot;&gt;#[allow(non_camel_case_types)]&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; int8_t &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; i8&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; int16_t &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; i16&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 警告&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token attribute attr-name&quot;&gt;#![allow(non_camel_case_types)]&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; int8_t &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; i8&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; int16_t &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; i16&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 不再警告&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;
+如何一键屏蔽所有 unused 警告？
+&lt;/summary&gt;
+&lt;p&gt;添加代码&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;#![allow(unused)]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;
+如何减小可执行文件体积？
+&lt;/summary&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;构建时使用 release 选项&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;cargo build --release&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;剔除二进制中包含的全部调试用信息&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;strip target/release/$command&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;配置 panic 处理策略&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Cargo.toml&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;[profile.release]
+panic = &amp;quot;abort&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;启用 LTO&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Cargo.toml&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;[profile.release]
+lto = true
+codegen-units = 1
+incremental = false&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;调整优化级别&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Cargo.toml&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;[profile.release]
+opt-level = &amp;quot;z&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;移除 &lt;code class=&quot;language-text&quot;&gt;std&lt;/code&gt; 仅使用 &lt;code class=&quot;language-text&quot;&gt;core&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用 upx 压缩二进制&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;upx --ultra-brute target/release/$command&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;效果:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;build&lt;/th&gt;
+&lt;th&gt;modifications&lt;/th&gt;
+&lt;th&gt;size (bytes)&lt;/th&gt;
+&lt;th&gt;size (human)&lt;/th&gt;
+&lt;th&gt;% change&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;release&lt;/td&gt;
+&lt;td&gt;none&lt;/td&gt;
+&lt;td&gt;6706984&lt;/td&gt;
+&lt;td&gt;6.4M&lt;/td&gt;
+&lt;td&gt;0%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;release&lt;/td&gt;
+&lt;td&gt;stripped&lt;/td&gt;
+&lt;td&gt;1749216&lt;/td&gt;
+&lt;td&gt;1.7M&lt;/td&gt;
+&lt;td&gt;-73.9%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;release&lt;/td&gt;
+&lt;td&gt;malloc&lt;/td&gt;
+&lt;td&gt;4293464&lt;/td&gt;
+&lt;td&gt;4.1M&lt;/td&gt;
+&lt;td&gt;-36.0%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;release&lt;/td&gt;
+&lt;td&gt;panic abort&lt;/td&gt;
+&lt;td&gt;6674328&lt;/td&gt;
+&lt;td&gt;6.4M&lt;/td&gt;
+&lt;td&gt;-0.5%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;release&lt;/td&gt;
+&lt;td&gt;No ThinLTO&lt;/td&gt;
+&lt;td&gt;4885384&lt;/td&gt;
+&lt;td&gt;4.7M&lt;/td&gt;
+&lt;td&gt;-27.2%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;release&lt;/td&gt;
+&lt;td&gt;-Oz&lt;/td&gt;
+&lt;td&gt;6631248&lt;/td&gt;
+&lt;td&gt;6.4M&lt;/td&gt;
+&lt;td&gt;-1.1%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;release&lt;/td&gt;
+&lt;td&gt;all above&lt;/td&gt;
+&lt;td&gt;1019704&lt;/td&gt;
+&lt;td&gt;996K&lt;/td&gt;
+&lt;td&gt;-84.8%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;release&lt;/td&gt;
+&lt;td&gt;above + xargo - strip&lt;/td&gt;
+&lt;td&gt;1181920&lt;/td&gt;
+&lt;td&gt;1154K&lt;/td&gt;
+&lt;td&gt;-82.4%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;release&lt;/td&gt;
+&lt;td&gt;everything&lt;/td&gt;
+&lt;td&gt;835320&lt;/td&gt;
+&lt;td&gt;816K&lt;/td&gt;
+&lt;td&gt;-87.5%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;release&lt;/td&gt;
+&lt;td&gt;everything + upx&lt;/td&gt;
+&lt;td&gt;247840&lt;/td&gt;
+&lt;td&gt;243K&lt;/td&gt;
+&lt;td&gt;-96.3%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;
+Rust 中宏的种类？
+&lt;/summary&gt;
+&lt;h3&gt;&lt;code class=&quot;language-text&quot;&gt;macro_rules&lt;/code&gt; 宏&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;macro_rules! say_hello {
+    () =&amp;gt; (
+        println!(&amp;quot;Hello!&amp;quot;);
+    )
+}
+
+say_hello!()&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;&lt;code class=&quot;language-text&quot;&gt;proc_macro&lt;/code&gt; 宏&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;#[derive] mode macros&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;use&lt;/span&gt; proc_macro&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;TokenStream&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token attribute attr-name&quot;&gt;#[proc_macro_derive(HelloWorld)]&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;pub&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;hello_world&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;input&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; TokenStream&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;-&gt;&lt;/span&gt; TokenStream &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// ...&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token attribute attr-name&quot;&gt;#[derive(HelloWorld)]&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; Pancakes&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Function-like macros&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;use&lt;/span&gt; proc_macro&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;TokenStream&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token attribute attr-name&quot;&gt;#[proc_macro]&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;pub&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;make_pub&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;item&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; TokenStream&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;-&gt;&lt;/span&gt; TokenStream &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// ..&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token macro-rules function&quot;&gt;make_pub!&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; X&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; u32 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;foo&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Attribute macros&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;use&lt;/span&gt; proc_macro&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;TokenStream&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token attribute attr-name&quot;&gt;#[proc_macro_attribute]&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;pub&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;attr&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; TokenStream&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; item&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; TokenStream&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;-&gt;&lt;/span&gt; TokenStream &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// ...&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token attribute attr-name&quot;&gt;#[hello]&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/details&gt;</content:encoded></item><item><title><![CDATA[Cow 是干嘛的？]]></title><description><![CDATA[std::borrow::Cow…]]></description><link>https://sigoden.github.io/rust-blog//what-is-cow/</link><guid isPermaLink="false">https://sigoden.github.io/rust-blog//what-is-cow/</guid><pubDate>Wed, 03 Apr 2019 03:29:49 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;https://doc.rust-lang.org/std/borrow/enum.Cow.html&quot;&gt;std::borrow::Cow&lt;/a&gt; 是一款写时克隆的智能指针。
+它最大的价值就是&lt;strong&gt;写时克隆&lt;/strong&gt;，如果用好，能很大程度提高性能并减少内存消耗。&lt;/p&gt;
+&lt;h2&gt;类型&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;pub&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;enum&lt;/span&gt; Cow&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token lifetime-annotation symbol&quot;&gt;&apos;a,&lt;/span&gt; B&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ?Sized &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token lifetime-annotation symbol&quot;&gt;&apos;a&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; B&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ToOwned
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/// Borrowed data.&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;Borrowed&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;token lifetime-annotation symbol&quot;&gt;&apos;a&lt;/span&gt; B&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/// Owned data.&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;Owned&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;B &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; ToOwned&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;Owned&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Cow&lt;/code&gt; 是个 &lt;code class=&quot;language-text&quot;&gt;Enum&lt;/code&gt; 类型的数据。&lt;code class=&quot;language-text&quot;&gt;Borrowed&lt;/code&gt; 子类型容纳引用的数据，&lt;code class=&quot;language-text&quot;&gt;Owned&lt;/code&gt; 子类型容纳拥有的数据。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; slice &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;mut&lt;/span&gt; input &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Cow&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Borrowed&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;slice&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Borrowed 容纳引用的数据&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;mut&lt;/span&gt; input &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Cow&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Owned&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;vec!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Owned 容纳拥有的数据&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;?Sized&lt;/code&gt; 表示数据可以是大小未知的，可以容纳 &lt;code class=&quot;language-text&quot;&gt;Trait Object&lt;/code&gt;，&lt;code class=&quot;language-text&quot;&gt;[T]&lt;/code&gt;，&lt;code class=&quot;language-text&quot;&gt;String&lt;/code&gt; 等。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Rust 中所有的类型参数默认是 &lt;code class=&quot;language-text&quot;&gt;Sized&lt;/code&gt;，我们如要取消这种限制，必须显示添加 &lt;code class=&quot;language-text&quot;&gt;?Sized&lt;/code&gt; 标记。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;ToOwned&lt;/code&gt; 是一种更通用的 &lt;code class=&quot;language-text&quot;&gt;Clone&lt;/code&gt;，不限于仅克隆到同类型，而支持克隆到 &lt;code class=&quot;language-text&quot;&gt;own&lt;/code&gt; 类型（如&lt;code class=&quot;language-text&quot;&gt;str&lt;/code&gt; -&gt; &lt;code class=&quot;language-text&quot;&gt;String&lt;/code&gt;，&lt;code class=&quot;language-text&quot;&gt;[T]&lt;/code&gt; -&gt; &lt;code class=&quot;language-text&quot;&gt;Vec&amp;lt;T&amp;gt;&lt;/code&gt;）。&lt;/p&gt;
+&lt;h2&gt;智能指针&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Cow&lt;/code&gt; 是实现了 &lt;code class=&quot;language-text&quot;&gt;Deref&lt;/code&gt;，是一种智能指针。我们可以直接使用内部数据的方法。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; slice &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;mut&lt;/span&gt; input &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Cow&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Borrowed&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;slice&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; v &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; input&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Deref&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;写时克隆&lt;/h2&gt;
+&lt;p&gt;如果数据是只读了，不需要克隆。如果数据是可变的，对 &lt;code class=&quot;language-text&quot;&gt;Owned&lt;/code&gt; 型数据来说，可以直接修改，故不需要克隆，对 &lt;code class=&quot;language-text&quot;&gt;Borrowed&lt;/code&gt; 型数据，则可以通过&lt;code class=&quot;language-text&quot;&gt;to_mut&lt;/code&gt; 克隆并转换成 &lt;code class=&quot;language-text&quot;&gt;Owned&lt;/code&gt; 数据以进行修改操作。&lt;/p&gt;
+&lt;p&gt;如有这样一个函数。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;abs_all&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;input&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;mut&lt;/span&gt; Cow&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i32&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;input&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; v &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; input&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; v &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token comment&quot;&gt;// 仅 v &amp;lt; 0 且 input 是 Borrowd，才需要克隆&lt;/span&gt;
+            input&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;to_mut&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;v&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;下面的 &lt;code class=&quot;language-text&quot;&gt;input&lt;/code&gt; 中所有元素均 &lt;code class=&quot;language-text&quot;&gt;&amp;gt;= 0&lt;/code&gt;，数据是只读了，执行时不会发生克隆。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; slice &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;mut&lt;/span&gt; input &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Cow&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;slice&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;abs_all&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;mut&lt;/span&gt; input&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;下面的 &lt;code class=&quot;language-text&quot;&gt;input&lt;/code&gt; 就需要克隆了，因为 &lt;code class=&quot;language-text&quot;&gt;input&lt;/code&gt; 中有元素 &lt;code class=&quot;language-text&quot;&gt;&amp;lt; 0&lt;/code&gt;。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; slice &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;mut&lt;/span&gt; input &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Cow&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;slice&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;abs_all&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;mut&lt;/span&gt; input&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;下面的 &lt;code class=&quot;language-text&quot;&gt;input&lt;/code&gt; 不需要克隆，应为 &lt;code class=&quot;language-text&quot;&gt;input&lt;/code&gt; 是 Owned 型的数据。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;mut&lt;/span&gt; input &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Cow&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;vec!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;abs_all&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;mut&lt;/span&gt; input&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;结合 &lt;code class=&quot;language-text&quot;&gt;Cow&lt;/code&gt;，&lt;code class=&quot;language-text&quot;&gt;abs_all&lt;/code&gt; 对只读引用的，且存在元素 &lt;code class=&quot;language-text&quot;&gt;&amp;gt;= 0&lt;/code&gt; 的 &lt;code class=&quot;language-text&quot;&gt;input&lt;/code&gt; 数据进行了克隆。&lt;/p&gt;
+&lt;h2&gt;意义&lt;/h2&gt;
+&lt;p&gt;如果数据是 &lt;code class=&quot;language-text&quot;&gt;Owned&lt;/code&gt; 类型，不需要 &lt;code class=&quot;language-text&quot;&gt;Cow&lt;/code&gt; 封装。如果数据是引用的，但又注定会修改，还不如提前转换成 &lt;code class=&quot;language-text&quot;&gt;Owned&lt;/code&gt; 型的。
+如果数据可能是引用的，即可能被修改，也可能不会被修改，且性能特别关键，那 &lt;code class=&quot;language-text&quot;&gt;Cow&lt;/code&gt; 就是必须的了。&lt;/p&gt;</content:encoded></item></channel></rss>

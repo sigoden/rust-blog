@@ -1,0 +1,357 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:100%/1.75 'Merriweather','Georgia',serif;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.9);font-family:'Merriweather','Georgia',serif;font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:Montserrat,sans-serif;font-weight:900;text-rendering:optimizeLegibility;font-size:2.5rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:1.73286rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:1.4427rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;letter-spacing:0.140625em;text-transform:uppercase;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:0.83255rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:0.75966rem;line-height:1.1;font-style:italic;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}ul{margin-left:1.75rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;list-style-position:outside;list-style-image:none;list-style:disc;}ol{margin-left:1.75rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;font-size:0.85rem;line-height:1.75rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;font-size:1rem;line-height:1.75rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}blockquote{margin-left:-1.75rem;margin-right:1.75rem;margin-top:0;padding-bottom:0;padding-left:1.42188rem;padding-right:0;padding-top:0;margin-bottom:1.75rem;font-size:1.20112rem;line-height:1.75rem;color:hsla(0,0%,0%,0.59);font-style:italic;border-left:0.32813rem solid hsla(0,0%,0%,0.9);}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.75rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}b{font-weight:700;}strong{font-weight:700;}dt{font-weight:700;}th{font-weight:700;}li{margin-bottom:calc(1.75rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.75rem;margin-bottom:calc(1.75rem / 2);margin-top:calc(1.75rem / 2);}li > ul{margin-left:1.75rem;margin-bottom:calc(1.75rem / 2);margin-top:calc(1.75rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.75rem / 2);}code{font-size:0.85rem;line-height:1.75rem;}kbd{font-size:0.85rem;line-height:1.75rem;}samp{font-size:0.85rem;line-height:1.75rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.16667rem;padding-right:1.16667rem;padding-top:0.875rem;padding-bottom:calc(0.875rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}blockquote > :last-child{margin-bottom:0;}blockquote cite{font-size:1rem;line-height:1.75rem;color:hsla(0,0%,0%,0.9);font-weight:400;}blockquote cite:before{content:"— ";}ul,ol{margin-left:0;}@media only screen and (max-width:480px){ul,ol{margin-left:1.75rem;}blockquote{margin-left:-1.3125rem;margin-right:0;padding-left:0.98438rem;}}h1,h2,h3,h4,h5,h6{margin-top:3.5rem;}a{box-shadow:0 1px 0 0 currentColor;color:#007acc;text-decoration:none;}a:hover,a:active{box-shadow:none;}mark,ins{background:#007acc;color:white;padding:0.10938rem 0.21875rem;text-decoration:none;}a.gatsby-resp-image-link{box-shadow:none;}</style><link rel="apple-touch-icon" sizes="256x256" href="/rust-blog/icons/icon-256x256.png?v=e51e3226891f2c338734b390f4c47c3e6b1a946b"/><link rel="preconnect dns-prefetch" href="https://www.google-analytics.com"/><link rel="alternate" type="application/rss+xml" href="/rust-blog/rss.xml"/><link rel="shortcut icon" href="/rust-blog/icons/icon-48x48.png?v=e51e3226891f2c338734b390f4c47c3e6b1a946b"/><link rel="manifest" href="/rust-blog/manifest.webmanifest"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/rust-blog/icons/icon-48x48.png?v=e51e3226891f2c338734b390f4c47c3e6b1a946b"/><link rel="apple-touch-icon" sizes="72x72" href="/rust-blog/icons/icon-72x72.png?v=e51e3226891f2c338734b390f4c47c3e6b1a946b"/><link rel="apple-touch-icon" sizes="96x96" href="/rust-blog/icons/icon-96x96.png?v=e51e3226891f2c338734b390f4c47c3e6b1a946b"/><link rel="apple-touch-icon" sizes="144x144" href="/rust-blog/icons/icon-144x144.png?v=e51e3226891f2c338734b390f4c47c3e6b1a946b"/><link rel="apple-touch-icon" sizes="192x192" href="/rust-blog/icons/icon-192x192.png?v=e51e3226891f2c338734b390f4c47c3e6b1a946b"/><meta name="generator" content="Gatsby 2.3.3"/><link rel="apple-touch-icon" sizes="384x384" href="/rust-blog/icons/icon-384x384.png?v=e51e3226891f2c338734b390f4c47c3e6b1a946b"/><link rel="apple-touch-icon" sizes="512x512" href="/rust-blog/icons/icon-512x512.png?v=e51e3226891f2c338734b390f4c47c3e6b1a946b"/><title data-react-helmet="true">初学者 FAQ？ | Rust 博客</title><meta data-react-helmet="true" name="description" content="Rust 初学者常会碰到的一些问题的归纳和解答"/><meta data-react-helmet="true" property="og:title" content="初学者 FAQ？"/><meta data-react-helmet="true" property="og:description" content="Rust 初学者常会碰到的一些问题的归纳和解答"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="sigoden huang"/><meta data-react-helmet="true" name="twitter:title" content="初学者 FAQ？"/><meta data-react-helmet="true" name="twitter:description" content="Rust 初学者常会碰到的一些问题的归纳和解答"/><style data-href="/rust-blog/styles.9ec328465d4b33cb9b46.css">@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:100;src:local("Montserrat Thin "),local("Montserrat-Thin"),url(/rust-blog/static/montserrat-latin-100-4124805c0503dbfe42dd67d7f5715964.woff2) format("woff2"),url(/rust-blog/static/montserrat-latin-100-c8fb2f714bbc7bc3e8dfffa916b286dc.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:100;src:local("Montserrat Thin italic"),local("Montserrat-Thinitalic"),url(/rust-blog/static/montserrat-latin-100italic-e4bf47bd171a9b2a72dd84c58bf90edf.woff2) format("woff2"),url(/rust-blog/static/montserrat-latin-100italic-d1f3f2d02ee4d7d2d4b1ad865014f189.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:200;src:local("Montserrat Extra Light "),local("Montserrat-Extra Light"),url(/rust-blog/static/montserrat-latin-200-444ae007121264bc1969d49b4031f9b2.woff2) format("woff2"),url(/rust-blog/static/montserrat-latin-200-edbce16a90aa22c297a0307b85789837.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:200;src:local("Montserrat Extra Light italic"),local("Montserrat-Extra Lightitalic"),url(/rust-blog/static/montserrat-latin-200italic-f316c5d1ec40f3e68654c3f38b3999f3.woff2) format("woff2"),url(/rust-blog/static/montserrat-latin-200italic-d7bbb730d9b5e11720b3eb32326dcca7.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:300;src:local("Montserrat Light "),local("Montserrat-Light"),url(/rust-blog/static/montserrat-latin-300-0a7c6df06e85d978d096d4d18fd8d43d.woff2) format("woff2"),url(/rust-blog/static/montserrat-latin-300-5e86df2cad22d2ef2b03516334afae5e.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:300;src:local("Montserrat Light italic"),local("Montserrat-Lightitalic"),url(/rust-blog/static/montserrat-latin-300italic-c076c4892bc7a4be7b9097e97a35012d.woff2) format("woff2"),url(/rust-blog/static/montserrat-latin-300italic-37c74a8d2d0d36a0a2c6e9a37ee15b0c.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:400;src:local("Montserrat Regular "),local("Montserrat-Regular"),url(/rust-blog/static/montserrat-latin-400-501ce09c42716a2f6e1503a25eb174c9.woff2) format("woff2"),url(/rust-blog/static/montserrat-latin-400-f29d2b8559699b6beb5b29b25b8bc572.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:400;src:local("Montserrat Regular italic"),local("Montserrat-Regularitalic"),url(/rust-blog/static/montserrat-latin-400italic-882908d9950d9c86ebd380877f293d95.woff2) format("woff2"),url(/rust-blog/static/montserrat-latin-400italic-22e7b04e5f2a901d49d4d342315a715a.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:500;src:local("Montserrat Medium "),local("Montserrat-Medium"),url(/rust-blog/static/montserrat-latin-500-f0f2716c5fe401d175b88715e7d28685.woff2) format("woff2"),url(/rust-blog/static/montserrat-latin-500-991b453bf90a0980e78966d2af7e3d3a.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:500;src:local("Montserrat Medium italic"),local("Montserrat-Mediumitalic"),url(/rust-blog/static/montserrat-latin-500italic-4590ebba421b3288c305305d7fa7b504.woff2) format("woff2"),url(/rust-blog/static/montserrat-latin-500italic-f3d41e4cdcc2314e49ddcea751d6f87f.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:600;src:local("Montserrat SemiBold "),local("Montserrat-SemiBold"),url(/rust-blog/static/montserrat-latin-600-15c24f7109941777774ddd2c636c6a50.woff2) format("woff2"),url(/rust-blog/static/montserrat-latin-600-f6dc6096f48956908c1787d9a722570a.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:600;src:local("Montserrat SemiBold italic"),local("Montserrat-SemiBolditalic"),url(/rust-blog/static/montserrat-latin-600italic-6d10b80529d5c36c7c09fca7193af0fc.woff2) format("woff2"),url(/rust-blog/static/montserrat-latin-600italic-02c4833312d94b1b0866f073023a250e.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:700;src:local("Montserrat Bold "),local("Montserrat-Bold"),url(/rust-blog/static/montserrat-latin-700-79982cd1f74c6fa7451bf9b37ead09ff.woff2) format("woff2"),url(/rust-blog/static/montserrat-latin-700-957e93fbbe131a59791cd820d98b7109.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:700;src:local("Montserrat Bold italic"),local("Montserrat-Bolditalic"),url(/rust-blog/static/montserrat-latin-700italic-283438e9577fe6a684466bb100e105ec.woff2) format("woff2"),url(/rust-blog/static/montserrat-latin-700italic-ca627c5ccc65cf80c2ecaea44b997de9.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:800;src:local("Montserrat ExtraBold "),local("Montserrat-ExtraBold"),url(/rust-blog/static/montserrat-latin-800-35386154b78d046218fc8f88a44ff515.woff2) format("woff2"),url(/rust-blog/static/montserrat-latin-800-756655905d91b77960888262e7d58d35.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:800;src:local("Montserrat ExtraBold italic"),local("Montserrat-ExtraBolditalic"),url(/rust-blog/static/montserrat-latin-800italic-e1b52a7bd83e2324db6d92bdc206844c.woff2) format("woff2"),url(/rust-blog/static/montserrat-latin-800italic-a69f0add9d86c1a84311d7dd8693ba4a.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:900;src:local("Montserrat Black "),local("Montserrat-Black"),url(/rust-blog/static/montserrat-latin-900-260c2ea3ef57feb82251952e605a36d5.woff2) format("woff2"),url(/rust-blog/static/montserrat-latin-900-186cae8091da578150d81958e217714a.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:900;src:local("Montserrat Black italic"),local("Montserrat-Blackitalic"),url(/rust-blog/static/montserrat-latin-900italic-d785fb9fc74588ffb7f306799709a97d.woff2) format("woff2"),url(/rust-blog/static/montserrat-latin-900italic-43b527fe77254f97ea36e2b54e845ec4.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:300;src:local("Merriweather Light "),local("Merriweather-Light"),url(/rust-blog/static/merriweather-latin-300-b1158cfcd4aacb9d8fb61625e37af46a.woff2) format("woff2"),url(/rust-blog/static/merriweather-latin-300-cc7de05e166e90320d7d896e0f72a19d.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:300;src:local("Merriweather Light italic"),local("Merriweather-Lightitalic"),url(/rust-blog/static/merriweather-latin-300italic-8fe52a48089d6ebe46db0b8e7cc66263.woff2) format("woff2"),url(/rust-blog/static/merriweather-latin-300italic-e1331f5397c2a673f9d3765138debdb5.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:400;src:local("Merriweather Regular "),local("Merriweather-Regular"),url(/rust-blog/static/merriweather-latin-400-8276fdb72ae8f4714d4e6eba704cc39f.woff2) format("woff2"),url(/rust-blog/static/merriweather-latin-400-69f09800f4f6479d06e44eba837df872.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:400;src:local("Merriweather Regular italic"),local("Merriweather-Regularitalic"),url(/rust-blog/static/merriweather-latin-400italic-3a9be9ea9f7aa4af6de7307df21d9fc0.woff2) format("woff2"),url(/rust-blog/static/merriweather-latin-400italic-d76079ed7541a433a54f79316de086e9.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:700;src:local("Merriweather Bold "),local("Merriweather-Bold"),url(/rust-blog/static/merriweather-latin-700-fa534be7ffa380e39a7f6e03bf9a5e03.woff2) format("woff2"),url(/rust-blog/static/merriweather-latin-700-ba56ea84b8084b7ff9677f50d3cd81bd.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:700;src:local("Merriweather Bold italic"),local("Merriweather-Bolditalic"),url(/rust-blog/static/merriweather-latin-700italic-1ef5edaaa20ae53ea50399884c5e48c6.woff2) format("woff2"),url(/rust-blog/static/merriweather-latin-700italic-534bc9e7ce93c73d73426e46acd78092.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:900;src:local("Merriweather Black "),local("Merriweather-Black"),url(/rust-blog/static/merriweather-latin-900-7528fb70e8a4a82c7305e72ff43ac25f.woff2) format("woff2"),url(/rust-blog/static/merriweather-latin-900-3799b6e2f5ed3fcccf9d7a708d7419fa.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:900;src:local("Merriweather Black italic"),local("Merriweather-Blackitalic"),url(/rust-blog/static/merriweather-latin-900italic-e1b4d2aaa78e12ad84aaf8a56321e4c2.woff2) format("woff2"),url(/rust-blog/static/merriweather-latin-900italic-2ae22f731b3424e8dbb4b37f7ca6e708.woff) format("woff")}code[class*=language-],pre[class*=language-]{color:#657b83;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{background:#073642}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border-radius:.3em}:not(pre)>code[class*=language-],pre[class*=language-]{background-color:#fdf6e3}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#93a1a1}.token.punctuation{color:#586e75}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#268bd2}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string,.token.url{color:#2aa198}.token.entity{color:#657b83;background:#eee8d5}.token.atrule,.token.attr-value,.token.keyword{color:#859900}.token.class-name,.token.function{color:#b58900}.token.important,.token.regex,.token.variable{color:#cb4b16}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}</style><link as="script" rel="preload" href="/rust-blog/component---src-templates-blog-post-js-415d0d0c2cf4f6f46019.js"/><link as="script" rel="preload" href="/rust-blog/0-167616ab40b3f40665e8.js"/><link as="script" rel="preload" href="/rust-blog/app-e9e139dba95ae2f9e0c8.js"/><link as="script" rel="preload" href="/rust-blog/styles-55d9a77079648f7209b9.js"/><link as="script" rel="preload" href="/rust-blog/webpack-runtime-ae1ca8724b7ef3956cc4.js"/><link as="fetch" rel="preload" href="/rust-blog/static/d/304/path---novice-faq-812-836-HWSrMVLwUul1ga8d0qTuqfjqOM.json" crossorigin="use-credentials"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><div style="margin-left:auto;margin-right:auto;max-width:52.5rem;padding:2.625rem 1.3125rem"><header><h3 style="font-family:Montserrat, sans-serif;margin-top:0"><a style="box-shadow:none;text-decoration:none;color:inherit" href="/rust-blog/">Rust 博客</a></h3></header><main><h1>初学者 FAQ？</h1><p style="font-size:0.83255rem;line-height:1.75rem;display:block;margin-bottom:1.75rem;margin-top:-1.75rem">April 10, 2019</p><div><p>Rust 初学者常会碰到的一些问题的归纳和解答。</p>
+<blockquote>
+<p>注意: 此文会不定期更新。</p>
+</blockquote>
+<details>
+<summary>
+如何安装 Rust ?
+</summary>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">curl https://sh.rustup.rs -sSf | sh </code></pre></div>
+</details>
+<details>
+<summary>
+如何更新 Rust ?
+</summary>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">rustup update # 更新</code></pre></div>
+<blockquote>
+<p><code class="language-text">rustup self update</code> 更新 rustup 工具自身</p>
+</blockquote>
+</details>
+<details>
+<summary>
+什么是 toolchain, target, component？
+</summary>
+<ul>
+<li>toolchain: Rust 发布频道，如 <code class="language-text">stable</code>，<code class="language-text">beta</code>, <code class="language-text">nightly</code> 。</li>
+<li>target: Rust 支持的平台，如 <code class="language-text">x86_64-unknown-linux-gnu</code> 和 <code class="language-text">wasm32-unknown-unknown</code>,点击<a href="https://forge.rust-lang.org/platform-support.html">platform-support</a>获取查看所有支持的平台</li>
+<li>
+<p>component: Rust 工具箱组件，常见有 <code class="language-text">cargo</code>(包管理), <code class="language-text">rustc</code>(编译器) <code class="language-text">rust-src</code>(rust源码)，<code class="language-text">rust-std</code>(std库)，<code class="language-text">clippy</code>(lint),<code class="language-text">rustfmt</code>(格式工具)。</p>
+</details>
+</li>
+</ul>
+<details>
+<summary>
+如何安装并使用 nightly ?
+</summary>
+<p>安装</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">rustup install nightly
+rustup component add --toolchain nightly clippy rust-src rustfmt</code></pre></div>
+<p>配置项目使用 nightly</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">rustup override set nightly</code></pre></div>
+<p>使用 nightly 版本的命令</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">cargo +nightly build</code></pre></div>
+</details>
+<details>
+<summary>
+Cargo下载太慢，如何加速?
+</summary>
+<ul>
+<li>Cargo 换源</li>
+</ul>
+<p>修改 <code class="language-text">$HOME/.cargo/config</code> 文件</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">[source.crates-io]
+replace-with = &#39;ustc&#39;
+
+[source.ustc]
+registry = &quot;git://mirrors.ustc.edu.cn/crates.io-index&quot;</code></pre></div>
+<ul>
+<li>Cargo 代理</li>
+</ul>
+<p>修改 <code class="language-text">$HOME/.cargo/config</code> 文件</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">[http]
+proxy = &quot;127.0.0.1:8080&quot;
+
+[https]
+proxy = &quot;127.0.0.1:8080&quot;</code></pre></div>
+<blockquote>
+<p>将替换 <code class="language-text">127.0.0.1:8080</code> 成你的代理服务器地址</p>
+</blockquote>
+</details>
+<details>
+<summary>
+rust开发使用什么 IDE？
+</summary>
+<ul>
+<li>clion + <a href="https://plugins.jetbrains.com/plugin/8182-rust/">IntelliJ Rust plugin</a></li>
+<li>vscode + <a href="https://github.com/rust-analyzer/rust-analyzer">ra-lsp</a></li>
+</ul>
+<blockquote>
+<p>安装 <code class="language-text">ra-lsp</code></p>
+</blockquote>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">git clone https://github.com/rust-analyzer/rust-analyzer
+cd rust-analyzer
+cargo install-code</code></pre></div>
+</details>
+<details>
+<summary>
+为什么学习 Rust 要先从书籍而不是代码开始？
+</summary>
+<p>Rust 引入了很多独特的概念（Trait, 所有权与借用，生命周期)，加上编译器十分严格，所以建议从阅读书籍理解基础概念入手。</p>
+<p>如果不理解这些直接写代码，就是和编译器战斗了，学习效率及其低下且痛苦。</p>
+<p>下面列出了一些重要的书籍。</p>
+<h4>必读</h4>
+<ul>
+<li><a href="https://doc.rust-lang.org/book/">The Rust Programing Language</a></li>
+<li><a href="https://doc.rust-lang.org/edition-guide/rust-2018/index.html">The Edition Guide</a></li>
+</ul>
+<h4>强烈推荐</h4>
+<ul>
+<li><a href="https://doc.rust-lang.org/stable/rust-by-example/">Rust by Example</a></li>
+<li><a href="https://doc.rust-lang.org/stable/nomicon/README.html">The Rustonomicon</a></li>
+<li><a href="https://doc.rust-lang.org/cargo/guide/">The Cargo Book</a></li>
+</ul>
+</details>
+<details>
+<summary>
+如何查询 Rust 语法规范？
+</summary>
+<p><a href="https://doc.rust-lang.org/reference/introduction.html">The Rust Reference</a></p>
+</details>
+<details>
+<summary>
+Rust 的 Features 清单?
+</summary>
+<p><a href="https://doc.rust-lang.org/unstable-book/index.html">The Unstable Book</a></p>
+</details>
+<details>
+<summary>
+Rust 程序员自称？
+</summary>
+<p>rustacean</p>
+</details>
+<details>
+<summary>
+Rust 术语中英文对照词典？
+</summary>
+<p><a href="https://github.com/rust-lang-cn/english-chinese-glossary-of-rust/blob/master/rust-glossary.md">Rust Glossary</a></p>
+</details>
+<details>
+<summary>
+为什么要多使用 `cargo check` 少使用 `cargo build`?
+</summary>
+<p><code class="language-text">cargo check</code> 专为加速工作流而开发的命令，它不产生二进制，只确保代码能够编译通过，<strong>更快</strong>。</p>
+<p>推荐开发流程：</p>
+<ol>
+<li>编写代码</li>
+<li>运行 <code class="language-text">cargo check</code> 判断是否编译通过</li>
+<li>重复步骤 1-2</li>
+<li>运行 <code class="language-text">cargo test</code>，确保通过所有测试</li>
+<li>运行 <code class="language-text">cargo build</code> 生成可执行文件</li>
+<li>
+<p>执行步骤 1</p>
+</details>
+</li>
+</ol>
+<details>
+<summary>
+`#![..]` vs `#[..]` ?
+</summary>
+<p><code class="language-text">#[..]</code> 仅作用于它后面的代码。<code class="language-text">#![..]</code> 作用于整个文件。</p>
+<div class="gatsby-highlight" data-language="rust"><pre class="language-rust"><code class="language-rust"><span class="token attribute attr-name">#[allow(non_camel_case_types)]</span>
+<span class="token keyword">type</span> int8_t <span class="token operator">=</span> i8<span class="token punctuation">;</span>
+
+<span class="token keyword">type</span> int16_t <span class="token operator">=</span> i16<span class="token punctuation">;</span> <span class="token comment">// 警告</span></code></pre></div>
+<div class="gatsby-highlight" data-language="rust"><pre class="language-rust"><code class="language-rust"><span class="token attribute attr-name">#![allow(non_camel_case_types)]</span>
+<span class="token keyword">type</span> int8_t <span class="token operator">=</span> i8<span class="token punctuation">;</span>
+
+<span class="token keyword">type</span> int16_t <span class="token operator">=</span> i16<span class="token punctuation">;</span> <span class="token comment">// 不再警告</span></code></pre></div>
+</details>
+<details>
+<summary>
+如何一键屏蔽所有 unused 警告？
+</summary>
+<p>添加代码</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">#![allow(unused)]</code></pre></div>
+</details>
+<details>
+<summary>
+如何减小可执行文件体积？
+</summary>
+<ul>
+<li>
+<p>构建时使用 release 选项</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">cargo build --release</code></pre></div>
+</li>
+<li>
+<p>剔除二进制中包含的全部调试用信息</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">strip target/release/$command</code></pre></div>
+</li>
+<li>配置 panic 处理策略</li>
+</ul>
+<p>Cargo.toml</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">[profile.release]
+panic = &quot;abort&quot;</code></pre></div>
+<ul>
+<li>启用 LTO</li>
+</ul>
+<p>Cargo.toml</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">[profile.release]
+lto = true
+codegen-units = 1
+incremental = false</code></pre></div>
+<ul>
+<li>调整优化级别</li>
+</ul>
+<p>Cargo.toml</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">[profile.release]
+opt-level = &quot;z&quot;</code></pre></div>
+<ul>
+<li>
+<p>移除 <code class="language-text">std</code> 仅使用 <code class="language-text">core</code></p>
+</li>
+<li>
+<p>使用 upx 压缩二进制</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">upx --ultra-brute target/release/$command</code></pre></div>
+</li>
+</ul>
+<p>效果:</p>
+<table>
+<thead>
+<tr>
+<th>build</th>
+<th>modifications</th>
+<th>size (bytes)</th>
+<th>size (human)</th>
+<th>% change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>release</td>
+<td>none</td>
+<td>6706984</td>
+<td>6.4M</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>release</td>
+<td>stripped</td>
+<td>1749216</td>
+<td>1.7M</td>
+<td>-73.9%</td>
+</tr>
+<tr>
+<td>release</td>
+<td>malloc</td>
+<td>4293464</td>
+<td>4.1M</td>
+<td>-36.0%</td>
+</tr>
+<tr>
+<td>release</td>
+<td>panic abort</td>
+<td>6674328</td>
+<td>6.4M</td>
+<td>-0.5%</td>
+</tr>
+<tr>
+<td>release</td>
+<td>No ThinLTO</td>
+<td>4885384</td>
+<td>4.7M</td>
+<td>-27.2%</td>
+</tr>
+<tr>
+<td>release</td>
+<td>-Oz</td>
+<td>6631248</td>
+<td>6.4M</td>
+<td>-1.1%</td>
+</tr>
+<tr>
+<td>release</td>
+<td>all above</td>
+<td>1019704</td>
+<td>996K</td>
+<td>-84.8%</td>
+</tr>
+<tr>
+<td>release</td>
+<td>above + xargo - strip</td>
+<td>1181920</td>
+<td>1154K</td>
+<td>-82.4%</td>
+</tr>
+<tr>
+<td>release</td>
+<td>everything</td>
+<td>835320</td>
+<td>816K</td>
+<td>-87.5%</td>
+</tr>
+<tr>
+<td>release</td>
+<td>everything + upx</td>
+<td>247840</td>
+<td>243K</td>
+<td>-96.3%</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details>
+<summary>
+Rust 中宏的种类？
+</summary>
+<h3><code class="language-text">macro_rules</code> 宏</h3>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">macro_rules! say_hello {
+    () =&gt; (
+        println!(&quot;Hello!&quot;);
+    )
+}
+
+say_hello!()</code></pre></div>
+<h3><code class="language-text">proc_macro</code> 宏</h3>
+<ul>
+<li><strong>#[derive] mode macros</strong></li>
+</ul>
+<div class="gatsby-highlight" data-language="rust"><pre class="language-rust"><code class="language-rust"><span class="token keyword">use</span> proc_macro<span class="token punctuation">:</span><span class="token punctuation">:</span>TokenStream<span class="token punctuation">;</span>
+
+<span class="token attribute attr-name">#[proc_macro_derive(HelloWorld)]</span>
+<span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function">hello_world</span><span class="token punctuation">(</span>input<span class="token punctuation">:</span> TokenStream<span class="token punctuation">)</span> <span class="token punctuation">-></span> TokenStream <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+<span class="token punctuation">}</span></code></pre></div>
+<div class="gatsby-highlight" data-language="rust"><pre class="language-rust"><code class="language-rust"><span class="token attribute attr-name">#[derive(HelloWorld)]</span>
+<span class="token keyword">struct</span> Pancakes<span class="token punctuation">;</span></code></pre></div>
+<ul>
+<li><strong>Function-like macros</strong></li>
+</ul>
+<div class="gatsby-highlight" data-language="rust"><pre class="language-rust"><code class="language-rust"><span class="token keyword">use</span> proc_macro<span class="token punctuation">:</span><span class="token punctuation">:</span>TokenStream<span class="token punctuation">;</span>
+
+<span class="token attribute attr-name">#[proc_macro]</span>
+<span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function">make_pub</span><span class="token punctuation">(</span>item<span class="token punctuation">:</span> TokenStream<span class="token punctuation">)</span> <span class="token punctuation">-></span> TokenStream <span class="token punctuation">{</span>
+    <span class="token comment">// ..</span>
+<span class="token punctuation">}</span></code></pre></div>
+<div class="gatsby-highlight" data-language="rust"><pre class="language-rust"><code class="language-rust"><span class="token macro-rules function">make_pub!</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> X<span class="token punctuation">:</span> u32 <span class="token operator">=</span> <span class="token string">"foo"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<ul>
+<li><strong>Attribute macros</strong></li>
+</ul>
+<div class="gatsby-highlight" data-language="rust"><pre class="language-rust"><code class="language-rust"><span class="token keyword">use</span> proc_macro<span class="token punctuation">:</span><span class="token punctuation">:</span>TokenStream<span class="token punctuation">;</span>
+
+<span class="token attribute attr-name">#[proc_macro_attribute]</span>
+<span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function">hello</span><span class="token punctuation">(</span>attr<span class="token punctuation">:</span> TokenStream<span class="token punctuation">,</span> item<span class="token punctuation">:</span> TokenStream<span class="token punctuation">)</span> <span class="token punctuation">-></span> TokenStream <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+<span class="token punctuation">}</span></code></pre></div>
+<div class="gatsby-highlight" data-language="rust"><pre class="language-rust"><code class="language-rust"><span class="token attribute attr-name">#[hello]</span>
+<span class="token keyword">fn</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre></div>
+</details></div><hr style="margin-bottom:1.75rem"/><div style="display:flex;margin-bottom:4.375rem"><div class=" gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:50px;height:50px;margin-right:0.875rem;margin-bottom:0;min-width:50px;border-radius:100%"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsSAAALEgHS3X78AAAFCklEQVQ4y3WUW2xURRjHD4QGAZEHDKAmRoyw7W731r3vdsue68ycy166vXdbumXbsm13e2+xVC4LAirEAlEMaCAURIghvEB8UDAhIWoivhBivURfSAV9sLRUaCifs9uy8uIk/3yzO+f/m/93zpzDfFRnY7IDAJjDUdMiZmH8fipecKrR/uoHleboaMQYHw0XJ0erSkLHG506gEuL4PFY7rq9YdPisaQ3Nz8QtcybxxKepxzmZMK39nC58Y33NP1XGVR4Y7+shz2S7s4OqWgio5lgRDZ+kwmar++LWIyj9Y61T33v184HY74cRrl6KGJadq3fU3BA0e/PiBunMnIx7FRMMISNDwex6VAfthzsx6aZIdkMI6oVthHT9Fuq6cPPYxsKdgfNy7OMa29T1ruaId/mbqT7YoTbOL2TGGGAmC/0YrOjG1uWp5D1GNXxlGRZ0YUtljS2jA2qNujFlikKvgH3SI6xHS2wjlUYVu0QdYe3cbq/tiEjUEgb88xoJs6CJsW95Nn/2lFJJEVs0IWtD/t5w9ERsfDl3MKJtMYMi4W6Ia5wYgiboBOX3E8i2802ZBtvRfafW5B9nOr2gn6k+onqSNbbiu2RNIX2cYbpFKs3joRs8wmHhKLL/ZweOnnjXBLboFNxQpI4YStVu+KGTs0LHUEftNPaQlyQDnohgexns97sBr3YCh2s4eqeSusSZkA0rO/h9D/0soWn2wTLkVbJ9nECOb5rxU5IEDfEketoM3Z649gZaMDeE41yKTQRLzQh9y/NyNG9BTsPtnGm01s543gXq9czfYK+rFswQDtrGG8RS87RNi3NyHk1ofigUSmDGlx2rJxwZVRCBQl8UqOwUK+yUIv979DNAk3YfWGLYL3VIVogzeo1pkcsrktx+lm6w7246FydbYMmudmgBqCSBGZrgxI0lCtQF5GhUpWgQhGBwr+vIoHcQ2pRvUubBHp/BSskOWOC6eUNpIMzzLayxl+fPkGa6tsalYeoLECY8FeDsrBLk8VPqR5RQViRIESE6uy1lTgQrxU9k02cNRuqkumWzLiTL4YEa7y/WXSEq+WArgIHbkcVAco1DKosjfBEW5k1ywSd0VQCIY2ARsSvNVkyRDH7Wz32Q4xzzMUFey3TI9teTHHFV1KCCWKSG2pklibjIUSTUBhQyKyikGy1E4LrwuFgdj6XA6uYJuWf1Eh+qOVd19tE6yu5FtN88cUkV/woxtnnKjA7Q9v8k8ImFRmBLOMnqiZnIZtkGb1ACLpDZPwP/X2Xrj/QsDBXLpQ+bhBcV/ZGLEvngaL5pSRvutuCnFAubbpEW8moROyiiV6jxo1UG6hWLLS9kipF4dupzkYJD1WCd6ZZcq7Pv0a9qm1Vh2geaOTsE3X0fgSJMEyTnWL+Z9C1k0gmu1TEQzXvmdosuYbixLsut9hNSvIfh4RoP7eZt/8R56znVYkbxxgdQIpsJqqyTlXIGtpqESY4g5F0K8L7ztfy7gkKu5z3E/c8a9D/OrMV2Z/LnSvRPhAXHJPVoo+eOQk0JABB4jSRhPuKxEFUQVCFAxATXJMJwbEv62mS3Mviouu/FvrqWGZ4Yf5mjX/lYD3/fIvsOROTPBcaJfeDCtH/d1QonYoJ7pkG3nmxGbk+S4V8a9rDpSvyX5+wb37Sozny4LTmztX+ZHgeHuNWp8v9nmTYzyZDfpIKlzp6a7jc0ehvCy/O1jbVm/e3KB7mX92F/eYbt+isAAAAAElFTkSuQmCC" alt="sigoden huang" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition:opacity 0.5s;transition-delay:0.25s;border-radius:50%"/><noscript><picture><img width="50" height="50" srcset="/rust-blog/static/d5fecb8dec83c7d87df23656f61a51e5/58398/rust-logo.png 1x,
+/rust-blog/static/d5fecb8dec83c7d87df23656f61a51e5/fd23f/rust-logo.png 1.5x,
+/rust-blog/static/d5fecb8dec83c7d87df23656f61a51e5/fc368/rust-logo.png 2x,
+/rust-blog/static/d5fecb8dec83c7d87df23656f61a51e5/521d9/rust-logo.png 3x" src="/rust-blog/static/d5fecb8dec83c7d87df23656f61a51e5/58398/rust-logo.png" alt="sigoden huang" style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><p>作者: <!-- -->sigoden huang<br/> <!-- -->欢迎进入<a href="https://github.com/sigoden/rust-blog">Github</a>参与讨论和评论</p></div><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/rust-blog/what-is-cow/">← <!-- -->Cow 是干嘛的？</a></li><li></li></ul></main><footer>© <!-- -->2019<!-- -->, Powered with<!-- --> <a href="https://pages.github.com">Github Pages</a> <a href="https://www.gatsbyjs.org">Gatsby</a></footer></div></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'undefined', 'auto', {});
+      
+      
+      
+      }
+      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"novice-faq-812","path":"/novice-faq/"};window.dataPath="304/path---novice-faq-812-836-HWSrMVLwUul1ga8d0qTuqfjqOM";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-e9e139dba95ae2f9e0c8.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-58f67562ab44a02057bd.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-415d0d0c2cf4f6f46019.js"],"component---src-pages-404-js":["/component---src-pages-404-js-cb976ab4cbd3902751b1.js"],"component---src-pages-index-js":["/component---src-pages-index-js-ea2371e3a938e34a4319.js"],"pages-manifest":["/pages-manifest-63d878f3d8970d9750f0.js"]};/*]]>*/</script><script src="/rust-blog/webpack-runtime-ae1ca8724b7ef3956cc4.js" async=""></script><script src="/rust-blog/styles-55d9a77079648f7209b9.js" async=""></script><script src="/rust-blog/app-e9e139dba95ae2f9e0c8.js" async=""></script><script src="/rust-blog/0-167616ab40b3f40665e8.js" async=""></script><script src="/rust-blog/component---src-templates-blog-post-js-415d0d0c2cf4f6f46019.js" async=""></script></body></html>
